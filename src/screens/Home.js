@@ -57,10 +57,10 @@ const HomeScreen = ({ navigation }) => {
       `${
         status === "Booked"
           ? "This slot is booked,Do you want to cancel?"
-          : "This slot is Availble you can proceed with this slot"
+          : "This slot is Available you can proceed with this slot"
       }`,
       [
-        status === "Availble"
+        status === "Available"
           ? {
               text: "Cancel",
               onPress: () => console.log("Cancel Pressed"),
@@ -71,7 +71,7 @@ const HomeScreen = ({ navigation }) => {
               onPress: () => {
                 const data = slots.map((slot) => {
                   if (slot.id === id) {
-                    return { ...slot, status: "Availble" };
+                    return { ...slot, status: "Available" };
                   } else {
                     return slot;
                   }
@@ -80,7 +80,7 @@ const HomeScreen = ({ navigation }) => {
               },
               style: "cancel",
             },
-        status === "Availble"
+        status === "Available"
           ? {
               text: "Book",
               onPress: () => {
@@ -169,7 +169,7 @@ const HomeScreen = ({ navigation }) => {
                   {
                     fontSize: 14,
                     color:
-                      item.status === "Availble" ? colors.green : colors.red,
+                      item.status === "Available" ? colors.green : colors.red,
                   },
                 ]}
               >
